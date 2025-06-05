@@ -1,11 +1,15 @@
 
-def validate(opciones, eleccion):
+def validate(opciones:list[str], eleccion):
     # Definir validación de eleccion
     ##########################################################################
-    pass
-    
+
+    if eleccion in opciones:
+        duda = True
+    else: 
+        print('Opción no válida, ingrese una de las opciones válidas: ')
+        duda = False
     ##########################################################################
-    return eleccion
+    return duda
 
 
 if __name__ == '__main__':
@@ -17,3 +21,12 @@ if __name__ == '__main__':
     validate(numeros, eleccion)
     
     
+    sin_respuesta = False
+    while not sin_respuesta:
+        opcion = input('''Ingrese una opción para Jugar!
+                1. Jugar
+                0. Salir
+                
+            > ''')
+        # 1. validar opcion
+        sin_respuesta = validate(numeros,opcion)
