@@ -16,26 +16,32 @@ continuar = 'y'
 correcto = True
 p_level = 10
 op_sys = 'cls' if sys.platform == 'win32' else 'clear'
-
+opciones_trivia = [0, 1]
+opciones_niveles = [1, 2, 3]
 
 # ----------------------------------------
 
 os.system(op_sys) # limpiar pantalla
 
 print('Bienvenido a la Trivia')
-opcion = input('''Ingrese una opción para Jugar!
-        1. Jugar
-        0. Salir
-        
-    > ''')
-# 1. validar opcion
-opcion = 
+
+# Se crea while para repetir pregunta en caso de que validate entregue False
+validado = False
+while not validado:
+    opcion = input('''Ingrese una opción para Jugar!
+            1. Jugar
+            0. Salir
+            
+        > ''')
+    # 1. validar opcion
+    validado = validate(opciones_trivia,opcion)
 
 # 2. Definir el comportamiento de Salir
 if opcion == '0':
-    print()
+    print("Nos vemos en una próxima ocación")
     time.sleep(2)
     os.system(op_sys)
+    correcto = False
     # finalizar programa
     
 
@@ -43,15 +49,18 @@ if opcion == '0':
 while correcto and n_pregunta < 3*p_level:
     
     if n_pregunta == 0:
-        p_level = input('¿Cuántas preguntas por nivel? (Máximo 3): ')
-        # 3. Validar el número de preguntas por nivel
-        p_level = 
+        validado = False
+        while not validado:
+            p_level = input('¿Cuántas preguntas por nivel? (Máximo 3): ')
+            # 3. Validar el número de preguntas por nivel
+
+            validado = validate(opciones_niveles,p_level)
         
     if continuar == 'y':
         #contador de preguntas
         n_pregunta += 1
         # 4. Escoger el nivel de la pregunta
-        nivel = 
+        nivel = choose_level(n_pregunta,p_level)
         print(f'Pregunta {n_pregunta}:')
         # 5. Escoger el enunciado y las alternativas de una pregunta según el nivel escogido
         enunciado, alternativas = 

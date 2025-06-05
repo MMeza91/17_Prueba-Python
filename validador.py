@@ -20,13 +20,3 @@ if __name__ == '__main__':
     # Si se ingresan valores no validos a eleccion debe seguir preguntando
     validate(numeros, eleccion)
     
-    
-    sin_respuesta = False
-    while not sin_respuesta:
-        opcion = input('''Ingrese una opción para Jugar!
-                1. Jugar
-                0. Salir
-                
-            > ''')
-        # 1. validar opcion
-        sin_respuesta = validate(numeros,opcion)
