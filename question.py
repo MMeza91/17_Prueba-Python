@@ -11,32 +11,33 @@ opciones = {'basicas': [1,2,3],
 
 def choose_q(dificultad):
     #escoger preguntas por dificultad
-    preguntas = 
-    
+
+
     # usar opciones desde ambiente global
-    global 
+    numero_opciones = opcion_niveles
     # escoger una pregunta
-    n_elegido = 
+    numero = random.choice(numero_opciones)
     # eliminarla del ambiente global para no escogerla de nuevo
-    
+    numero_opciones.remove(numero)
     
     # escoger enunciado y alternativas mezcladas
-    pregunta = 
-    alternativas = 
+    pregunta =  p.pool_preguntas[dificultad][f"pregunta_{numero}"]
+    alternativas = shuffle_alt(pregunta)
     
     
     return pregunta['enunciado'], alternativas
 
 if __name__ == '__main__':
+    opcion_niveles = [1, 2, 3]
     # si ejecuto el programa, las preguntas cambian de orden, pero nunca debieran repetirse
-    pregunta, alternativas = choose_q('basicas')
-    print(f'El enunciado es: {pregunta}')
+    enunciado, alternativas = choose_q('basicas')
+    print(f'El enunciado es: {enunciado}')
     print(f'Las alternativas son: {alternativas}')
     
-    pregunta, alternativas = choose_q('basicas')
-    print(f'El enunciado es: {pregunta}')
+    enunciado, alternativas = choose_q('basicas')
+    print(f'El enunciado es: {enunciado}')
     print(f'Las alternativas son: {alternativas}')
     
-    pregunta, alternativas = choose_q('basicas')
-    print(f'El enunciado es: {pregunta}')
+    enunciado, alternativas = choose_q('basicas')
+    print(f'El enunciado es: {enunciado}')
     print(f'Las alternativas son: {alternativas}')
