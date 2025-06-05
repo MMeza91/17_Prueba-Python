@@ -87,12 +87,12 @@ while correcto and n_pregunta < 3*p_level:
         correcto = verificar(alternativas,respuesta)
         
         if correcto and n_pregunta < 3*p_level:
-            print('Muy bien sigue así!')
+            print('\nMuy bien sigue así!')
             
             #Se realiza un bucle para asegurar que respuesta esté dentro de las opciones
             valido = False
             while not valido:
-                continuar = input('Desea continuar? [y/n]: ').lower()
+                continuar = input('\nDesea continuar? [y/n]: ').lower()
                 #9. Validar si es que se responde y o n
                 valido = validate(opciones_continuar,continuar)
 
@@ -103,11 +103,11 @@ while correcto and n_pregunta < 3*p_level:
             time.sleep(4)
             os.system(op_sys)
         else: 
-            print(f'Lo siento, conseguiste {n_pregunta - 1} respuestas correctas,\n Sigue participando!!')
+            print(f'\nLo siento, conseguiste {n_pregunta - 1} respuestas correctas,\n Sigue participando!!')
             time.sleep(4)
             exit()
     else: 
-        print('Nos vemos la proxima vez, sigue practicando')
+        print('\nNos vemos la proxima vez, sigue practicando')
         time.sleep(4)
         exit()
             

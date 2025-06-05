@@ -3,16 +3,19 @@ import preguntas as p
 
 def verificar(alternativas, eleccion):
     #devuelve el índice de elección dada
-    eleccion = eleccion.lower()
+
     eleccion = ['a','b','c','d'].index(eleccion)
 
     # generar lógica para determinar respuestas correctas
     ##########################################################################################
     
+    #Se evalua si dentro del diccionario de alternativas la respuesta contiene un 1 que significa respuesta correcta
     if alternativas[eleccion][1] == 1:
         correcto = True
+        print('\nRespuesta Correcta')
     else: 
         correcto = False
+        print('\nRespuesta Incorrecta')
 
     
     

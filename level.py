@@ -2,7 +2,11 @@ def choose_level(n_pregunta, p_level):
     
     # Construir lógica para escoger el nivel
     ##################################################
-    division = n_pregunta/int(p_level)
+    #Se genera una variable flotante llamada división 
+    # divide entre el numero de pregunta en el que se va y la cantidad de preguntas por nivel
+    # para evaluar en que nivel nos encontramos.
+
+    division = n_pregunta/p_level
     if division <= 1:
         level = "basicas"
     elif division > 1 and division <= 2:
