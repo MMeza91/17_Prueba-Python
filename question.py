@@ -14,9 +14,10 @@ def choose_q(dificultad):
 
 
     # usar opciones desde ambiente global
-    numero_opciones = opcion_niveles
+    numero_opciones = opciones[dificultad]
     # escoger una pregunta
     numero = random.choice(numero_opciones)
+    
     # eliminarla del ambiente global para no escogerla de nuevo
     numero_opciones.remove(numero)
     
@@ -28,7 +29,7 @@ def choose_q(dificultad):
     return pregunta['enunciado'], alternativas
 
 if __name__ == '__main__':
-    opcion_niveles = [1, 2, 3]
+    opciones_niveles = [1, 2, 3]
     # si ejecuto el programa, las preguntas cambian de orden, pero nunca debieran repetirse
     enunciado, alternativas = choose_q('basicas')
     print(f'El enunciado es: {enunciado}')

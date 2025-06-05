@@ -3,13 +3,17 @@ import preguntas as p
 
 def verificar(alternativas, eleccion):
     #devuelve el índice de elección dada
-    eleccion = ['a', 'b', 'c','d'].index(eleccion)
+    eleccion = eleccion.lower()
+    eleccion = ['a','b','c','d'].index(eleccion)
 
     # generar lógica para determinar respuestas correctas
     ##########################################################################################
-    pass
     
-    
+    if alternativas[eleccion][1] == 1:
+        correcto = True
+    else: 
+        correcto = False
+
     
     
     ##########################################################################################
@@ -24,7 +28,7 @@ if __name__ == '__main__':
     pregunta = p.pool_preguntas['basicas']['pregunta_2']
     print_pregunta(pregunta['enunciado'],pregunta['alternativas'])
     respuesta = input('Escoja la alternativa correcta:\n> ').lower()
-    verificar(pregunta['alternativas'], respuesta)
+    print(verificar(pregunta['alternativas'], respuesta))
 
 
 

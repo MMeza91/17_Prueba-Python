@@ -1,5 +1,5 @@
 
-def validate(opciones:list[str], eleccion):
+def validate(opciones:list, eleccion):
     # Definir validación de eleccion
     ##########################################################################
 

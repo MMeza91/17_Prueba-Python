@@ -1,10 +1,15 @@
 import preguntas as p
 
-def print_pregunta(enunciado, alternativas):
+def print_pregunta(enunciado, alternativas:list[str]):
     
     # Imprimir enunciado y alternativas
     ###############################################################
-    pass
+    print(f"\n{enunciado[0]}\n")
+    letras = ["A","B","C","D"]
+    for letra, alt in zip(letras,alternativas):
+        print(f"{letra[0]}. {alt[0]}")
+
+    print()      
     
     
     
